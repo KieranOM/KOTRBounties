@@ -1,0 +1,6 @@
+minimum-bounty: 100
+heads:
+    drop: true
+    chance: 10
+title-stay: 5
+active-bounties: {}

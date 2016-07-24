@@ -1,0 +1,38 @@
+name: KOTRBounties
+version: 1.2
+main: me.kieranlington.KingOfTheRealm.Bounties
+author: Kieranlington
+description: Bounties integrated with King of The Realm.
+depend: [Vault, KOTR] 
+
+commands:
+    bounties:
+        usage: /<command>
+        description: Display active bounties.
+    bounty:
+        usage: /<command> <player> <amount>
+        description: Set a bounty on a player.
+
+permissions:
+    kotr.bounties.list:
+        description: Whether the user can list current bounties
+        default: true
+    kotr.bounties.set:
+        description: Whether the user can set a bounty on another player
+        default: true
+    kotr.bounties.drop-prevent:
+        description: Prevents the user's head from dropping after a bounty
+        default: op
+        
+    kotr.bounties.default:
+        description: The default permissions for KOTR Bounties
+        default: true
+        children:
+            kotr.bounties.list: true
+            kotr.bounties.set: true
+    kotr.bounties.op:
+        description: All permissions for KOTR Bounties
+        default: op
+        children:
+            kotr.bounties.default: true
+            kotr.bounties.drop-prevent: true
