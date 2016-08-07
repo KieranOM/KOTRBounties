@@ -28,6 +28,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import me.kieranlington.KingOfTheRealm.realm.Realm;
 import me.kieranlington.KingOfTheRealm.realm.RealmHandler;
 import me.kieranlington.KingOfTheRealm.utils.Title;
+import me.kieranlington.KingOfTheRealm.utils.Utils;
 import me.kieranlington.KingOfTheRealm.utils.messages.MessageOptions;
 import me.kieranlington.KingOfTheRealm.utils.messages.MessageType;
 import net.milkbowl.vault.economy.Economy;
@@ -287,7 +288,7 @@ public class Bounties extends JavaPlugin implements Listener {
 		Bukkit.getServer().broadcastMessage(ChatColor.DARK_GREEN + "A " + ChatColor.GREEN + "bounty" + ChatColor.DARK_GREEN + " of " + ChatColor.GREEN + "$" + amount + ChatColor.DARK_GREEN + " has been placed on " + ChatColor.GREEN + placed.getName());
 		
 		// Send a title to the placed player, using the stay times from KOTR
-		new Title("&cWatch out!", "&4Someone placed a bounty on you...", KOTR.getOptions().misc.titleStay * 20).send(placed);
+		new Title("&cWatch out!", "&4Someone placed a bounty on you...").send(placed);
 		
 		// Play the anvil landing sound, using the 1.8 Sound enum fallback
 		try {
